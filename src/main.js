@@ -12,24 +12,24 @@ const bookView = new BookView('books-container', 'statistics-container');
 const addBookView = new AddBookView('add-book-container');
 const filterView = new FilterView('filters-container');
 
-// Подписка на изменения в модели книг
+
 bookModel.subscribe(books => {
     const { genre, searchQuery } = filterModel.filters;
     const filteredBooks = bookModel.filterBooks(genre, searchQuery);
 
-    bookView.renderBooks(filteredBooks); // Обновляем список книг
-    bookView.renderStatistics(books);   // Обновляем статистику
+    bookView.renderBooks(filteredBooks);
+    bookView.renderStatistics(books);   
 });
 
-// Подписка на изменения фильтров
+
 filterModel.subscribe(() => {
     const { genre, searchQuery } = filterModel.filters;
     const filteredBooks = bookModel.filterBooks(genre, searchQuery);
 
-    bookView.renderBooks(filteredBooks); // Обновляем список книг
+    bookView.renderBooks(filteredBooks); 
 });
 
-// Добавление книги
+
 addBookView.form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const newBook = addBookView.getFormData();
@@ -37,7 +37,7 @@ addBookView.form.addEventListener('submit', async (e) => {
     addBookView.resetForm();
 });
 
-// Удаление книги
+
 bookView.booksContainer.addEventListener('click', async (e) => {
     if (e.target.classList.contains('delete-btn')) {
         const bookId = e.target.dataset.id;
@@ -45,7 +45,7 @@ bookView.booksContainer.addEventListener('click', async (e) => {
     }
 });
 
-// Загрузка книг при старте
+
 (async () => {
     await bookModel.loadBooks();
 })();

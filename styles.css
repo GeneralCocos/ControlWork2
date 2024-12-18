@@ -50,7 +50,7 @@ input, select, button {
     display: flex;
     gap: 10px;
     align-items: center;
-    flex-shrink: 0; /* Запрещаем сжимать кнопки */
+    flex-shrink: 0; 
 }
 
 .book-card .delete-btn, .book-card .status-btn {
@@ -58,9 +58,9 @@ input, select, button {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    width: auto; /* Убираем растягивание */
-    white-space: nowrap; /* Запрещаем перенос текста */
-    flex-shrink: 0; /* Предотвращаем уменьшение кнопки в flex-контейнере */
+    width: auto;
+    white-space: nowrap; 
+    flex-shrink: 0; 
 }
 
 .book-card .delete-btn {

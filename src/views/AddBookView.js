@@ -36,7 +36,6 @@ export default class AddBookView {
     }
 
     getFormData() {
-        // Маппинг для перевода жанров и статусов
         const genreMapping = {
             FICTION: 'Художественная литература',
             SCIENCE: 'Научная литература',
@@ -61,8 +60,8 @@ export default class AddBookView {
             title,
             author,
             year,
-            genre: genreMapping[genreKey] || genreKey, // Переводим жанр на русский
-            status: statusMapping[statusKey] || statusKey, // Переводим статус на русский
+            genre: genreMapping[genreKey] || genreKey,
+            status: statusMapping[statusKey] || statusKey,
         };
     }
 
